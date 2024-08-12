@@ -16,7 +16,7 @@ local discharging_icons = {
    nf.md_battery_70,
    nf.md_battery_80,
    nf.md_battery_90,
-   nf.md_battery,
+   nf.md_battery_high,
 }
 local charging_icons = {
    nf.md_battery_charging_10,
@@ -28,7 +28,7 @@ local charging_icons = {
    nf.md_battery_charging_70,
    nf.md_battery_charging_80,
    nf.md_battery_charging_90,
-   nf.md_battery_charging,
+   nf.md_battery_charging_high,
 }
 
 local colors = {
@@ -61,8 +61,8 @@ local _push = function(text, icon, fg, bg, separate)
 end
 
 local _set_date = function()
-   local date = wezterm.strftime(' %a %H:%M:%S')
-   _push(date, nf.fa_calendar, colors.date_fg, colors.date_bg, true)
+   local date = wezterm.strftime(' %Y-%m-%d %a %H:%M:%S')
+   _push(date, nf.md_calendar_month_outline, colors.date_fg, colors.date_bg, true)
 end
 
 local _set_battery = function()
